@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>W2NER: Unified Named Entity Recognition as Word-Word Relation Classification</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.icon">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">W<sup>2</sup>NER: Unified Named Entity Recognition as Word-Word Relation Classification</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"> <a href="https://ljynlp.github.io/">Jingye Li</a><sup>1*</sup>,</span>
+            <span class="author-block"> <a href="https://haofei.vip/">Hao Fei</a><sup>1*</sup>,</span>
+            <span class="author-block"> <a href="#"> Jiang Liu</a><sup>1</sup>, </span>
+            <span class="author-block"> <a href="https://chocowu.github.io/">Shengqiong Wu</a><sup>1</sup>,</span>
+            <span class="author-block"> <a href="https://zhangmeishan.github.io/">Meishan Zhang</a><sup>2</sup>, </span>
+            <span class="author-block"> <a href="#">Chong Teng</a><sup>1</sup>, </span>
+            <span class="author-block"> <a href="#">Donghong Ji</a><sup>1</sup>, </span>
+            <span class="author-block"> <a href="#">Fei Li</a><sup>1</sup>, </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Wuhan University,</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup>Harbin Institute of Technology (Shenzhen)</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal contribution</span><br>
+          </div>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2112.10070.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+<!--              <span class="link-block">-->
+<!--                <a href="https://arxiv.org/abs/2305.11255"-->
+<!--                   class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                      <i class="ai ai-arxiv"></i>-->
+<!--                  </span>-->
+<!--                  <span>arXiv</span>-->
+<!--                </a>-->
+<!--              </span>-->
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ljynlp/W2NER"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <!-- Poster Link. -->
+<!--              <span class="link-block">-->
+<!--              <a href="./static/media/ICML22_poster_landscape.pdf" class="external-link button is-normal is-rounded is-dark">-->
+<!--                <span class="icon">-->
+<!--                    <svg class="svg-inline&#45;&#45;fa fa-chalkboard fa-w-20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chalkboard" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><path fill="currentColor" d="M96 64h448v352h64V40c0-22.06-17.94-40-40-40H72C49.94 0 32 17.94 32 40v376h64V64zm528 384H480v-64H288v64H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z"></path></svg>&lt;!&ndash; <i class="fas fa-chalkboard"></i> Font Awesome fontawesome.com &ndash;&gt;-->
+<!--                </span>-->
+<!--                <span>Poster</span>-->
+<!--              </a>-->
+<!--            </span>-->
+
+              <!-- Dataset Link. -->
+<!--              <span class="link-block">-->
+<!--                <a href="https://github.com/google/nerfies/releases/tag/0.1"-->
+<!--                   class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                      <i class="far fa-images"></i>-->
+<!--                  </span>-->
+<!--                  <span>Data</span>-->
+<!--                  </a>                -->
+<!--              </span>-->
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--<section class="hero teaser">-->
+<!--  <div class="container is-max-desktop">-->
+<!--    <div class="hero-body">-->
+<!--      <video id="teaser" autoplay muted loop playsinline height="100%">-->
+<!--        <source src="./static/videos/teaser.mp4"-->
+<!--                type="video/mp4">-->
+<!--      </video>-->
+<!--      <h2 class="subtitle has-text-centered">-->
+<!--        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into-->
+<!--        free-viewpoint-->
+<!--        portraits.-->
+<!--      </h2>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+
+<!--<section class="hero is-light is-small">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      <div id="results-carousel" class="carousel results-carousel">-->
+<!--        <div class="item item-steve">-->
+<!--          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">-->
+<!--            <source src="./static/videos/steve.mp4"-->
+<!--                    type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-chair-tp">-->
+<!--          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">-->
+<!--            <source src="./static/videos/chair-tp.mp4"-->
+<!--                    type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-shiba">-->
+<!--          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">-->
+<!--            <source src="./static/videos/shiba.mp4"-->
+<!--                    type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-fullbody">-->
+<!--          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">-->
+<!--            <source src="./static/videos/fullbody.mp4"-->
+<!--                    type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-blueshirt">-->
+<!--          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">-->
+<!--            <source src="./static/videos/blueshirt.mp4"-->
+<!--                    type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-mask">-->
+<!--          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">-->
+<!--            <source src="./static/videos/mask.mp4"-->
+<!--                    type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-coffee">-->
+<!--          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">-->
+<!--            <source src="./static/videos/coffee.mp4"-->
+<!--                    type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-toby">-->
+<!--          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">-->
+<!--            <source src="./static/videos/toby2.mp4"-->
+<!--                    type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            So far, named entity recognition (NER) has been involved with three major types, including flat, overlapped (aka. nested), and discontinuous NER, which have mostly been studied individually. Recently, a growing interest has been built for unified NER, tackling the above three jobs concurrently with one single model. Current best-performing methods mainly include span-based and sequence-to-sequence models, where unfortunately the former merely focus on boundary identification and the latter may suffer from exposure bias. In this work, we present a novel alternative by modeling the unified NER as word-word relation classification, namely W2NER. The architecture resolves the kernel bottleneck of unified NER by effectively modeling the neighboring relations between entity words with Next-Neighboring-Word (NNW) and Tail-Head-Word-* (THW-*) relations. Based on the W2NER scheme we develop a neural framework, in which the unified NER is modeled as a 2D grid of word pairs. We then propose multi-granularity 2D convolutions for better refining the grid representations. Finally, a co-predictor is used to sufficiently reason the word-word relations. We perform extensive experiments on 14 widely-used benchmark datasets for flat, overlapped, and discontinuous NER (8 English and 6 Chinese datasets), where our model beats all the current top-performing baselines, pushing the state-of-the-art performances of unified NER.
+
+          </p><br>
+        <div class="publication-image">
+          <center><img width="80%" height="100%" src="./static/images/intro.png"></center>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+
+<!--<section class="section" style="margin-top: -90px">-->
+<!--  <div class="container is-max-desktop">-->
+<!--    &lt;!&ndash; Paper video. &ndash;&gt;-->
+<!--    <div class="columns is-centered has-text-centered">-->
+<!--      <div class="column is-four-fifths">-->
+<!--        <h2 class="title is-3">Presentation</h2>-->
+<!--        <div class="publication-image">-->
+<!--          <iframe src="https://nusu-my.sharepoint.com/personal/haofei37_nus_edu_sg/_layouts/15/Doc.aspx?sourcedoc={a7e0651a-3bfd-4d23-865f-a26cfb42839c}&amp;action=embedview&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=0" width='100%' height='454px' frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>-->
+<!--&lt;!&ndash;          <iframe src='https://view.officeapps.live.com/op/embed.aspx?src=[https://haofei.vip/SMDL/static/media/paper-intro.pptx]' width='100%' height='600px' frameborder='0'></iframe>&ndash;&gt;-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;/ Paper video. &ndash;&gt;-->
+<!--  </div>-->
+<!--</section>-->
+
+
+<section class="section" style="margin-top: -20px">
+  <div class="container is-max-desktop">
+    <!-- Paper intro. -->
+    <div class="columns is-centered has-text-centered">
+
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+          <p style="text-align:left">
+            &#9654; &nbsp;<b> 2D Tagging Scheme</b>:
+          </p><br>
+        <div class="publication-image">
+          <center><img width="70%" src="./static/images/tagging.png"></center>
+        </div>
+        <br>
+
+<!--      <div class="column is-four-fifths" style="width: 100%" >-->
+          <p style="text-align:left">
+            &#9654; &nbsp;<b> Framework</b>:
+          </p><br>
+        <div class="publication-image">
+          <center><img width="120%" src="./static/images/method.png"></center>
+        </div>
+
+          <p style="text-align:left">
+            &#9654; &nbsp;<b> Decoding</b>:
+          </p><br>
+        <div class="publication-image">
+          <center><img width="70%" src="./static/images/decoding.png"></center>
+        </div>
+
+
+        </div>
+      </div>
+
+    </div>
+    <!--/ Paper intro. -->
+  </div>
+</section>
+
+
+
+<!--<section class="section" style="margin-top: -120px">-->
+<!--  <div class="container is-max-desktop">-->
+<!--    &lt;!&ndash; Paper method. &ndash;&gt;-->
+<!--    <div class="columns is-centered has-text-centered">-->
+<!--      <div class="column is-four-fifths">-->
+<!--        <h2 class="title is-3">Method</h2>-->
+<!--          <p style="text-align:left">-->
+<!--            We thus propose a Three-hop Reasoning CoT framework, namely THOR.-->
+<!--          </p><br>-->
+<!--        <div class="publication-image">-->
+<!--          <img width="100%" src="./static/images/method.png">-->
+<!--        </div>-->
+<!--        <br>-->
+
+<!--        <div class="columns is-centered has-text-centered">-->
+<!--          <div class="column is-four-fifths">-->
+<!--    &lt;!&ndash;        <h2 class="title is-3"></h2>&ndash;&gt;-->
+<!--            <div class="publication-image" style="text-align:left">-->
+<!--              <b>Step 1.</b>  We first ask LLM what aspect a is mentioned with the following template: <br>-->
+<!--              <center><img  width="60%" src="./static/images/prompt1.png"></center>-->
+<!--              <p style="text-align:justify"> C<sub>1</sub> is the first-hop prompt context. This step can be formulated as A=argmaxp(a|X, t), where A is the output text which explicitly mentions the aspect a.</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="columns is-centered has-text-centered">-->
+<!--          <div class="column is-four-fifths">-->
+<!--    &lt;!&ndash;        <h2 class="title is-3"></h2>&ndash;&gt;-->
+<!--            <div class="publication-image" style="text-align:left">-->
+<!--              <b>Step 2.</b>  Now based on X, t and a, we ask LLM to answer in detail what would be the underlying opinion o towards the mentioned aspect a: <br>-->
+<!--              <center><img  width="60%" src="./static/images/prompt2.png"></center>-->
+<!--              <p style="text-align:justify"> C<sub>2</sub> is the second-hop prompt context which concatenates C1 and A.-->
+<!--This step can be written as O=argmaxp(o|X, t, a), where O is the answer text containing the possible opinion expression o.</div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="columns is-centered has-text-centered">-->
+<!--          <div class="column is-four-fifths">-->
+<!--    &lt;!&ndash;        <h2 class="title is-3"></h2>&ndash;&gt;-->
+<!--            <div class="publication-image" style="text-align:left">-->
+<!--              <b>Step 3.</b>  With the complete sentiment skeleton (X, t, a and o) as context, we finally ask LLM to infer the final answer of polarity t: <br>-->
+<!--              <center><img  width="60%" src="./static/images/prompt3.png"></center>-->
+<!--              <p style="text-align:justify"> C<sub>3</sub> is the third-hop prompt context. We note this step as y=argmaxp(y|X, t, a, o).</div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;/ Paper method. &ndash;&gt;-->
+<!--  </div>-->
+<!--</section>-->
+
+
+
+
+
+
+
+<section class="section" style="margin-top: 0px">
+  <div class="container is-max-desktop">
+    <!-- Paper Experiment. -->
+    <div class="columns is-centered has-text-centered">
+
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experiment</h2>
+          <p style="text-align:left">
+            <b>&#8226;  Results for Flat NER</b>
+          </p><br>
+        <div class="publication-image">
+          <center><img width="100%" src="./static/images/res1.png"></center></br>
+          <center><img width="100%" src="./static/images/res2.png"></center>
+        </div>
+        <br>
+
+      <div class="column is-four-fifths" style="width: 100%" >
+          <p style="text-align:left">
+            <b>&#8226; Results for Overlapped NER</b>
+          </p><br>
+        <div class="publication-image">
+          <center><img width="100%" src="./static/images/res3.png"></center></br>
+          <center><img width="60%" src="./static/images/res5.png"></center>
+        </div>
+        </div>
+        <br>
+
+      <div class="column is-four-fifths" style="width: 100%" >
+          <p style="text-align:left">
+            <b>&#8226; Results for Discontinuous NER</b>
+          </p><br>
+        <div class="publication-image">
+          <center><img width="100%" src="./static/images/res4.png"></center></br>
+          <center><img width="60%" src="./static/images/ana1.png"></center>
+        </div>
+        </div>
+        <br>
+
+      <div class="column is-four-fifths" style="width: 100%" >
+          <p style="text-align:left">
+            <b>&#8226; Model Ablation</b>
+          </p><br>
+        <div class="publication-image">
+          <center><img width="68%" src="./static/images/ana2.png"></center>
+        </div>
+        </div>
+
+      </div>
+      </div>
+    <!--/ Paper method. -->
+  </div>
+</section>
+
+
+
+
+
+
+<!--<section class="section" style="margin-top: 0px">-->
+<!--  <div class="container is-max-desktop">-->
+<!--    &lt;!&ndash; Paper Case. &ndash;&gt;-->
+<!--    <div class="columns is-centered has-text-centered">-->
+
+<!--      <div class="column is-four-fifths">-->
+<!--        <h2 class="title is-3">In-depth Analysis</h2>-->
+<!--          <p style="text-align:left">-->
+<!--            <b>Analysis Targets:</b>-->
+<!--          </p>-->
+<!--        <div class="publication-image">-->
+<!--          <center><img width="60%" src="./static/images/ana-questions.png"></center>-->
+<!--        </div><br>-->
+
+
+<!--        <p style="text-align:left">-->
+<!--            <b>▶ Structure matching helps correctly retrieve and emphasize the key RoIs that are crucial to the task improvements.</b>-->
+<!--          </p>-->
+<!--        <div class="publication-image">-->
+<!--          <center><img width="56%" src="./static/images/ana1.png"></center></br>-->
+<!--          <center><img width="100%" src="./static/images/ana2.png"></center>-->
+<!--        </div></br>-->
+
+<!--        <p style="text-align:left">-->
+<!--            <b>▶ Our method strengthens the duality between two dual tasks by correctly aligning the RoIs.</b>-->
+<!--          </p>-->
+<!--        <div class="publication-image">-->
+<!--          <center><img width="70%" src="./static/images/ana3.png"></center>-->
+<!--        </div></br>-->
+
+<!--        <p style="text-align:left">-->
+<!--            <b>▶ With syntactic structure co-echoing between the text↔text dual learning, the generated sentences are more diversified and grammarly correct.</b>-->
+<!--          </p>-->
+<!--        <div class="publication-image">-->
+<!--          <center><img width="68%" src="./static/images/ana4.png"></center></br>-->
+<!--          <center><img width="77%" src="./static/images/ana5.png"></center>-->
+<!--        </div></br>-->
+
+
+<!--        <p style="text-align:left">-->
+<!--            <b>▶ Non-text↔non-text dual learning can also benefit from structure matching.</b></br>-->
+<!--            <b>▶ The dual tasks with richer structural information for the alignments will lead to better improvements.</b>-->
+<!--          </p>-->
+<!--        <div class="publication-image">-->
+<!--          <center><img width="100%" src="./static/images/ana6.png"></center>-->
+<!--        </div>-->
+
+
+<!--      </div>-->
+<!--      </div>-->
+<!--    &lt;!&ndash;/ Paper method. &ndash;&gt;-->
+<!--  </div>-->
+<!--</section>-->
+
+
+
+
+
+
+<!--<section class="section">-->
+<!--  <div class="container is-max-desktop">-->
+<!--    &lt;!&ndash; Paper poster. &ndash;&gt;-->
+<!--    <div class="columns is-centered has-text-centered">-->
+<!--      <div class="column is-four-fifths">-->
+<!--        <h2 class="title is-3">Poster</h2>-->
+<!--        <div class="publication-image">-->
+<!--          <object data="./static/media/ICML22_poster_landscape.pdf" type="application/pdf" width="100%" height="600px"></object>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;/ Paper poster. &ndash;&gt;-->
+<!--  </div>-->
+<!--</section>-->
+
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Paper poster. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Paper</h2>
+        <div class="publication-image">
+          <object data="https://arxiv.org/pdf/2112.10070.pdf" type="application/pdf" width="100%" height="1020px"></object>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper poster. -->
+  </div>
+</section>
+
+
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{li2022unified,
+  title={Unified named entity recognition as word-word relation classification},
+  author={Li, Jingye and Fei, Hao and Liu, Jiang and Wu, Shengqiong and Zhang, Meishan and Teng, Chong and Ji, Donghong and Li, Fei},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={36},
+  number={10},
+  pages={10965--10973},
+  year={2022}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+<!--    <div class="content has-text-centered">-->
+<!--      <a class="icon-link"-->
+<!--         href="./static/videos/nerfies_paper.pdf">-->
+<!--        <i class="fas fa-file-pdf"></i>-->
+<!--      </a>-->
+<!--      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>-->
+<!--        <i class="fab fa-github"></i>-->
+<!--      </a>-->
+<!--    </div>-->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The website template credit to <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+            licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 License</a>.
+          </p>
+<!--          <p>-->
+<!--            This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,-->
+<!--            we just ask that you link back to this page in the footer.-->
+<!--            Please remember to remove the analytics code included in the header of the website which-->
+<!--            you do not want on your website.-->
+<!--          </p>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
